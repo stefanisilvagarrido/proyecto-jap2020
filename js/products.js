@@ -5,6 +5,7 @@ var currentProductsArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
+/*var nombreProducto= undefined */
 
 function sortProducts(criteria, array){
     let result = [];
