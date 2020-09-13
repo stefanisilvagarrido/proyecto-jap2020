@@ -137,5 +137,24 @@ a.custom-card:hover {
 }
 
 .checked {
-  color: orange;
+  color: rgb(255, 230, 0);
+}
+
+.box-comentarios{
+  
+}
+
+.box-nombreUsuario{
+
+}
+.box-fecha{
+
+}
+
+.box-descripcion{
+
+}
+
+.box-estrellas{
+
 }

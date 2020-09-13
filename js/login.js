@@ -6,7 +6,8 @@ var mail= document.getElementById("inputEmail") //Buscar la etiqueta donde igres
 var ingresarEmail= document.getElementById("buttonEmail")//Buscar la etiqueta del botón para ingresar al index.html
 ingresarEmail.addEventListener("click", ()=>{ //Esta función lo que hace es: cuando damos click en el botón, guardamos nuestro email, en sessionStorage.
     window.localStorage.setItem("mail", mail.value)
-})
     
+  
+})
 
 });

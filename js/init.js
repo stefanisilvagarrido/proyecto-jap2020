@@ -50,5 +50,5 @@ document.addEventListener("DOMContentLoaded", function(e){
     mail.innerHTML+= localStorage.getItem("mail")
   }
 
-
+  
 });

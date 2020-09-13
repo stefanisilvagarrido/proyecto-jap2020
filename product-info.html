@@ -26,14 +26,61 @@
       <a class="py-2 d-none d-md-inline-block" id="ubicacionMail" href="#">Usuario:  </a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main">
+    <div class="container mt-5">
+     
+      <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Precio</dt>
+        <dd>
+          <p id="productCount"></p>
+        </dd>
+
+        <dt>Categoría</dt>
+        <dd>
+          <p id="productCategory"></p>
+        </dd>
+
+        <dt>Cantidad disponible</dt>
+        <dd>
+          <p id="productSoldCount"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+      </dl>
+      <h3>Productos Recomendados</h3>
+      <div id="listaRecomendados" class="row"></div>
+      <h3>Comentarios</h3>
+      <div id="comentarios" class="row box-comentarios" > 
+      </div>
+      <div id="nuevoComentario" class="row box-comentarios" > 
+      </div>
+      <div>
+        <br><h5>Ingrese aquí un nuevo comentario</h5>
+        <form>
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br><br>
+        <label for="comentario">Comentario:</label><br>
+        <input type="text" id="comentario" name="comentario"><br><br>
+        <label for="puntaje">Puntaje (1-5):</label><br>
+        <input type="number" id="puntaje" name="puntaje"><br><br>
+        <input type="button" id="enviar" value="Enviar">
+      </form> 
+      </div>
     </div>
-  </div>
+    
+
+  </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
