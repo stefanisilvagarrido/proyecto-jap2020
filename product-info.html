@@ -17,13 +17,7 @@
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" id="ubicacionMail" href="#">Usuario:  </a>
+    <div class="container d-flex flex-column flex-md-row justify-content-between" id=menu>
     </div>
   </nav>
   <main role="main">
@@ -54,7 +48,23 @@
 
         <dt>Imágenes ilustrativas</dt>
         <dd>
-          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          <div class="carousel slide" id="carouselExampleIndicators" data-ride="carousel" style="width: 550px;">
+            <ol class="carousel-indicators" id="carouselIndicators">
+
+            </ol>
+            <div class="carousel-inner" id="productImages">
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+
           </div>
         </dd>
       </dl>
@@ -63,19 +73,26 @@
       <h3>Comentarios</h3>
       <div id="comentarios" class="row box-comentarios" > 
       </div>
-      <div id="nuevoComentario" class="row box-comentarios" > 
-      </div>
-      <div>
-        <br><h5>Ingrese aquí un nuevo comentario</h5>
-        <form>
-        <label for="nombre">Nombre:</label><br>
-        <input type="text" id="nombre" name="nombre"><br><br>
-        <label for="comentario">Comentario:</label><br>
-        <input type="text" id="comentario" name="comentario"><br><br>
-        <label for="puntaje">Puntuación (1-5):</label><br>
-        <input type="number" id="puntaje" name="puntaje"><br><br>
-        <input type="button" id="enviar" value="Enviar">
+      <div id="nuevoComentario">
+        <header class="my-3 py-2 row container">
+          <div class="col-11 box-coment">
+              <form class="box-form">
+                  <div class="form-group my-2">
+                      <textarea class="form-control textarea" id="comentario" rows="3" placeholder="Escribe tu comentario aqui!"></textarea>
+                  </div>
+              </form>
+          </div>
+          <div id="select-star" class="col-2 d-flex box-star">
+              <i class="far fa-star" data-value='1'></i>
+              <i class="far fa-star" data-value='2'></i>
+              <i class="far fa-star" data-value='3'></i>
+              <i class="far fa-star" data-value='4'></i>
+              <i class="far fa-star" data-value='5'></i>
+          </div>
+      </header>
+        <input type="button" class="btn btn-primary btn-block w-25" id="enviar" value="Enviar comentario">
       </form> 
+      </div>
       </div>
     </div>
     
