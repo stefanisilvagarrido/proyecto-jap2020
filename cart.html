@@ -39,11 +39,37 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <h1 style= "text-align: center">Carrito de compras</h1>
+    <br><br>
+  <h3>Artículos a comprar</h3>
+  <table class="table" id="listado">
+    <tr>
+      <th><strong></strong></th>
+      <th><strong>Nombre</strong></th>
+      <th><strong>Costo</strong></th>
+      <th class="col-xs-2"><strong>Cantidad</strong></th>
+      <th><strong>Subtotal</strong></th>
+    </tr>
+    </table>
+    <div id="opciones">
+      <br>
+      <h3>Tipo de envío</h3>
+      <form>
+        <input type="radio" name="envio" value="15">
+        <label>Premiu 2 a 5 días (15%)</label><br>
+        <input type="radio" name="envio" value="7">
+        <label>Express 5 a 8 días (7%)</label><br>
+        <input type="radio" id="other" name="envio" value="5">
+        <label>Standard 12 a 15 días (5%)</label>
+      </form>
+      <br>
+      <h3>Dirección de envío</h3>
+      <form>
+        <div>Calle  </div><input type="text" id="calle"><br>
+        <div>Número</div><input type="text" id="nro"><br>
+        <div>Esquina</div><input type="text" id="esq"><br>
+      </form>
+
     </div>
   </div>
   <div id="spinner-wrapper">
