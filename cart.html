@@ -49,29 +49,139 @@
       <th><strong>Costo</strong></th>
       <th class="col-xs-2"><strong>Cantidad</strong></th>
       <th><strong>Subtotal</strong></th>
+      <th></th>
     </tr>
     </table>
     <div id="opciones">
       <br>
       <h3>Tipo de envío</h3>
       <form>
-        <input type="radio" name="envio" value="15">
+        <input type="radio" name="envio" value="15" onclick="calcularSubtotales()">
         <label>Premiu 2 a 5 días (15%)</label><br>
-        <input type="radio" name="envio" value="7">
+        <input type="radio" name="envio" value="7" onclick="calcularSubtotales()">
         <label>Express 5 a 8 días (7%)</label><br>
-        <input type="radio" id="other" name="envio" value="5">
+        <input type="radio" id="other" name="envio" value="5" onclick="calcularSubtotales()" checked>
         <label>Standard 12 a 15 días (5%)</label>
       </form>
       <br>
       <h3>Dirección de envío</h3>
       <form>
-        <div>Calle  </div><input type="text" id="calle"><br>
-        <div>Número</div><input type="text" id="nro"><br>
-        <div>Esquina</div><input type="text" id="esq"><br>
+        <div class="row">
+          <div class="col-8 col-sm-6">Calle<input type="text" style="width:30em" class="form-control" id="calle"></div><br>
+          <div class="col-4 col-sm-6">Número<input type="text" style="width:10em;"  class="form-control" id="nro"></div><br>
+        </div><br>
+        <div class="row"></div>
+         <div>Esquina<input type="text" style="width:30em" class="form-control" id="esq"></div><br>
+        </div>
       </form>
 
+      <h3>Costos</h3>
+      <table class="table" id="lstCostos">
+        <tr>
+          <td><label>Subtotal</label>
+            <br><label>Costo unitario del producto por cantidad</label></td>
+          <td id="subtotal"></td>
+        </tr>
+        <tr>
+          <td><label>Costo de envío</label>
+            <br><label>Segun el tipo de envío</label></td>
+          <td id="envio"></td>
+        </tr>
+        <tr>
+          <td>Total ($)</td>
+          <td style="font-weight:bold;" id="total"></td>
+        </tr>
+      </table>
+
+      <h3>Forma de pago</h3>
+      <label id="formaPago">No ha seleccionado</label>
+      <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+        Seleccionar
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Forma de pago</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <div class="creditCardForm">
+              <div class="heading">
+                  <h3>Ingrese los datos de la tarjeta</h3>
+              </div>
+              <div class="payment">
+                  <form>
+                    <div class="row">
+                      <div class="col-14 col-sm-12">
+                        <label for="owner"> Nombre titular</label>
+                        <input type="text" class="form-control" id="owner">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-14 col-sm-12" id="card-number-field">
+                        <label for="cardNumber">Número de tarjeta</label>
+                        <input type="text" class="form-control" id="cardNumber">
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-10 col-sm-8" id="expiration-date">
+                            <label>Vencimiento</label>
+                            <select class="form-control" style="width:8em;" id="year">
+                                <option value="01">Enero</option>
+                                <option value="02">Febrero </option>
+                                <option value="03">Marzo</option>
+                                <option value="04">Abril</option>
+                                <option value="05">Mayo</option>
+                                <option value="06">Junio</option>
+                                <option value="07">Julio</option>
+                                <option value="08">Agosto</option>
+                                <option value="09">Setiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                            <select class="form-control" style="width:6em;" id="month">
+                                <option value="20"> 2020</option>
+                                <option value="21"> 2021</option>
+                                <option value="22"> 2022</option>
+                                <option value="23"> 2023</option>
+                                <option value="24"> 2024</option>
+                                <option value="25"> 2025</option>
+                            </select>
+                      </div>
+                      <div class="col-3 col-sm-2">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control" style="width:5em;" id="cvv">
+                      </div>
+                    </div>                    
+                    <div class="form-group" id="credit_cards">
+                        <img src="img/visa.jpg" style="width:70px" id="visa">
+                        <img src="img/mastercard.jpg" style="width:70px" id="mastercard">
+                        <img src="img/oca.jpg" style="width:95px" id="oca">
+                    </div>
+                  </form>
+              </div>
+          </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="aceptar">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="row justify-content-md-center">
+    <button id="comprar" class="btn btn-primary btn-lg">Confirmar compra</button>
+  </div> 
+  <br> 
+  <br> 
+  <div id="mensaje"></div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
